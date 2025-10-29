@@ -1,0 +1,27 @@
+
+use('EasyPetpuja');
+
+db.SpecialSabji.insertMany([
+  { "day": "Monday", "item": "Dhoka", "price": 30 },
+  { "day": "Tuesday", "items": [
+      { "name": "Patal Posto", "price": 30 },
+      { "name": "Veg Dal", "price": 25 }
+    ]
+  },
+  { "day": "Wednesday", "items": [
+      { "name": "Sukto", "price": 30 },
+      { "name": "Matha Dal", "price": 30 }
+    ]
+  },
+  { "day": "Thursday", "items": [
+      { "name": "Mixed Veg", "price": 30 },
+      { "name": "Veg Dal", "price": 25 }
+    ]
+  },
+  { "day": "Friday", "items": [
+      { "name": "Kopta", "price": 30 },
+      { "name": "Matha Dal", "price": 30 }
+    ]
+  },
+  { "day": "Saturday", "item": "Begun Bahar", "price": 30 }
+]);

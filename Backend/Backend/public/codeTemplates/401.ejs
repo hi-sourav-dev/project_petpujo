@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>401 Unauthorized</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      color: #4a148c;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      fill: #6a1b9a;
+    }
+
+    .error-code {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      font-weight: bold;
+      color: rgba(74, 20, 140, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .digit {
+      font-size: 100px;
+    }
+
+    .key-svg {
+      width: 80px;
+      height: 80px;
+      fill: #6a1b9a;
+      margin: 0 15px;
+      transform: rotate(-15deg);
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #4a148c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #6a1b9a;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(106, 27, 154, 0.4);
+    }
+
+    .btn:hover {
+      background: #4a148c;
+      box-shadow: 0 5px 25px rgba(74, 20, 140, 0.6);
+      transform: scale(1.03);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <!-- Origami-style bird logo -->
+    <svg viewBox="0 0 24 24">
+      <path d="M2 3l20 8-6 2-4 8-2-6-6-2z"/>
+    </svg>
+  </div>
+
+  <div class="card">
+    <div class="error-code">
+      <span class="digit">4</span>
+      <!-- Key SVG -->
+      <svg class="key-svg" viewBox="0 0 64 64">
+        <path d="M32 2C18.75 2 8 12.75 8 26c0 6.625 2.625 12.625 6.875 17.125L2 56v6h6l7.25-7.25 4.25 4.25 4.25-4.25L26 58h6v-6l-5.125-5.125C38.75 44.625 48 35.375 48 26 48 12.75 45.25 2 32 2zm0 6c8.75 0 16 7.25 16 16S40.75 40 32 40 16 32.75 16 24 23.25 8 32 8z"/>
+      </svg>
+      <span class="digit">1</span>
+    </div>
+
+    <h2>No authorization found.</h2>
+    <p>This page is not publicly available.<br>To access it, please log in first.</p>
+    <a href="<%= returnUrl %>" class="btn">RETURN HOME</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+        <head>
+          <style>
+            .popup {
+              position: fixed;
+              top: 20px;
+              right: 20px;
+              background: #f44336;
+              color: #fff;
+              padding: 15px 20px;
+              border-radius: 8px;
+              font-family: Arial, sans-serif;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+          </style>
+        </head>
+        <body>
+          <div class="popup">Invalid login. Redirecting to Sign Up...</div>
+          <script>
+            setTimeout(() => {
+              window.location.href = "/login/usersign.html";
+            }, 3000);
+          </script>
+        </body>
+      </html>

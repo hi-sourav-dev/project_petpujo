@@ -1,0 +1,35 @@
+<!-- payment/receipt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt - Easy PetPuja</title>
+  <style>
+    body { font-family: Arial; margin: 2rem; }
+    .success { background: #e6ffe6; padding: 1rem; border: 1px solid #33cc33; }
+    .summary { margin-top: 1rem; }
+    .order-item { display: flex; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <h1>Easy PetPuja</h1>
+  <h3>Brainware University Canteen Service</h3>
+  <div class="success">
+    ✅ <strong>Payment Successful!</strong>
+  </div>
+  <p><strong>Bill Number:</strong> <span id="billNumber"></span></p>
+
+  <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+  <p><strong>Payment ID:</strong> <span id="paymentId"></span></p>
+  <p><strong>Date & Time:</strong> <span id="dateTime"></span></p>
+  <p><strong>Status:</strong> <span style="color:green;">PAID</span></p>
+
+  <div class="summary">
+    <h3>Order Summary</h3>
+    <div id="items"></div>
+    <h3>Total: ₹<span id="total"></span></h3>
+  </div>
+
+  <script src="receipt.js"></script>
+</body>
+</html>

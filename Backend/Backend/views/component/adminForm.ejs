@@ -1,0 +1,195 @@
+<style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      /* background-color: #2D2D2D; */
+      background: rgba(45, 45, 45,0.9);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+      padding: 24px;
+    }
+    h2 {
+      color: #E0E0E0;
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      background-color: #3D3D3D;
+      color: #E0E0E0;
+      border: none;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 16px;
+    }
+    input:focus {
+      background-color: #4D4D4D;
+      outline: none;
+      border: 1px solid #3B82F6;
+    }
+    label {
+      color: #E0E0E0;
+      margin-bottom: 14px;
+      font-size: 0.8rem;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .checkbox-container label {
+      font-size: 0.8rem;
+      margin-bottom: 0;
+    }
+    .checkbox-container input {
+      margin-bottom: 0;
+    }
+    .checkbox-container .remember {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      white-space: nowrap;
+      gap: 0.5rem;
+    }
+    .checkbox-container a {
+      color: #3B82F6;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .checkbox-container a:hover {
+      text-decoration: underline;
+    }
+    .signup-text {
+      color: #E0E0E0;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .signup-text a {
+      color: #3B82F6;
+      text-decoration: none;
+    }
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
+    button {
+      width: 100%;
+      background: linear-gradient(to right, #6366F1, #2563EB);
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+    #submit:hover {
+      background: linear-gradient(to right, #4F46E5, #1E40AF);
+    }
+      .password-wrapper input {
+    padding-right: 40px;
+    }
+
+  .toggle-password {
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 17rem;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    fill: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  </style><div class="container">  
+    <h2>Admin Login</h2>  
+    <form action="/adminPortal" id="admin-signup-form" method="post">  
+      <input placeholder="Username" type="text" name="Username" required>  
+      <input placeholder="User ID" type="text"  name="userId" required>  
+      <input placeholder="Email address" type="email" name="email" required>  
+      <!-- <input placeholder="Password" type="password" name="password" required>   -->
+        <div class="password-wrapper" style="position: relative;">
+        <input placeholder="Password" type="password" id="real-password" name="password" required style="padding-right: 40px;" />
+          <button type="button" class="toggle-password" onclick="togglePassword('real-password')">
+            <svg id="eye" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20" height="20">
+              <path d="M288 32C141 32 36.3 132.6 0 256c36.3 123.4 141 224 288 224s251.7-100.6 288-224C539.7 132.6 435 32 288 32zm0 368c-79.4 0-144-64.6-144-144s64.6-144 144-144 144 64.6 144 144-64.6 144-144 144zm0-240a96 96 0 1 0 0 192 96 96 0 1 0 0-192z"/>
+            </svg>
+            <svg id="eye-slash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="20" height="20">
+              <path d="M634 471L45 3c-9.8-7.4-23.9-5.4-31.3 4.4s-5.4 23.9 4.4 31.3l60.1 47.1C32.5 138.7 2.9 198.3.6 203.2c-3.3 7.9-3.3 16.7 0 24.6C36.3 351.4 141 448 288 448c60.1 0 116-18.4 163.3-49.5l84.3 66c9.8 7.7 24.1 5.7 31.7-4.1s5.7-24.1-4.1-31.7zM289.6 384c-79.5 0-144-64.5-144-144 0-17.4 3.1-34.1 8.7-49.5l199.3 157c-17.3 22.2-43.7 36.5-73.9 36.5zM320 64c79.5 0 144 64.5 144 144 0 28.3-8.3 54.5-22.3 76.5l39.3 31c19.4-26.5 33.5-56.3 41.4-76.7 3.3-7.9 3.3-16.7 0-24.6C539.7 132.6 435 64 320 64z"/>
+            </svg>
+        </button>
+      </div>
+
+      <div class="password-wrapper" style="position: relative;">
+        <input placeholder="Confirm Password" type="password" id="confirm-password" name="Confirm Password" required style="padding-right: 40px;" />
+          <button type="button" class="toggle-password" onclick="togglePassword('confirm-password')">
+            <svg id="eye" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20" height="20">
+              <path d="M288 32C141 32 36.3 132.6 0 256c36.3 123.4 141 224 288 224s251.7-100.6 288-224C539.7 132.6 435 32 288 32zm0 368c-79.4 0-144-64.6-144-144s64.6-144 144-144 144 64.6 144 144-64.6 144-144 144zm0-240a96 96 0 1 0 0 192 96 96 0 1 0 0-192z"/>
+            </svg>
+            <svg id="eye-slash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="20" height="20">
+              <path d="M634 471L45 3c-9.8-7.4-23.9-5.4-31.3 4.4s-5.4 23.9 4.4 31.3l60.1 47.1C32.5 138.7 2.9 198.3.6 203.2c-3.3 7.9-3.3 16.7 0 24.6C36.3 351.4 141 448 288 448c60.1 0 116-18.4 163.3-49.5l84.3 66c9.8 7.7 24.1 5.7 31.7-4.1s5.7-24.1-4.1-31.7zM289.6 384c-79.5 0-144-64.5-144-144 0-17.4 3.1-34.1 8.7-49.5l199.3 157c-17.3 22.2-43.7 36.5-73.9 36.5zM320 64c79.5 0 144 64.5 144 144 0 28.3-8.3 54.5-22.3 76.5l39.3 31c19.4-26.5 33.5-56.3 41.4-76.7 3.3-7.9 3.3-16.7 0-24.6C539.7 132.6 435 64 320 64z"/>
+            </svg>
+        </button>
+      </div>
+      <input placeholder="Mobile Number" type="tel" name="mobileNumber"  required>  
+      <div class="checkbox-container">  
+          <div class="remember">
+              <label for="remember-me"> Remember me</label> 
+              <input id="remember-me" type="checkbox" name="checkbox" required>   
+          </div>
+        <a href="#">Forgot password?</a>  
+      </div>  
+      <p class="signup-text"> Don't have an account? <a href="/adminSignup">Signup</a></p>  
+      <button id="submit" type="submit">Login</button>  
+    </form>  
+  </div>
+
+  <script>
+  function togglePassword(target) {
+    const passwordInput = document.getElementById(target);
+    const eye = document.getElementById('eye');
+    const eyeSlash = document.getElementById('eye-slash');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      eye.style.display = 'inline';
+      eyeSlash.style.display = 'none';
+    } else {
+      passwordInput.type = 'password';
+      eye.style.display = 'none';
+      eyeSlash.style.display = 'inline';
+    }
+  }
+
+document.getElementById('admin-signup-form').addEventListener('submit', function (e) {
+  const password = document.querySelector('input[name="password"]').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  if (password !== confirmPassword) {
+    e.preventDefault();
+    alert('Passwords do not match!');
+  }
+});
+
+document.getElementById('admin-signup-form').addEventListener('submit', function (e) {
+  const mobileInput = document.querySelector('input[name="mobileNumber"]').value;
+
+  if (!/^\d{10}$/.test(mobileInput)) {
+    e.preventDefault();
+    alert('Mobile number must be exactly 10 digits.');
+  }
+});
+
+</script>

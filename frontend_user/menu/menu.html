@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu </title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <link rel="stylesheet" href="menu.css">
+
+</head>
+<body>
+  <div id="title-bar">
+    <img src="logo.png" alt="Logo" id="logo">
+    <h1>College Canteen</h1>
+    <button id="cart-toggle">Cart</button>
+  </div>
+
+  <div id="cart">
+    <h3>Selected Items:</h3>
+    <div id="cart-items"></div>
+    <div id="total">Total: ₹0</div>
+    <button id="pay-btn" onclick="payNow()">Pay</button>
+  </div>
+
+  <div class="section">
+    <h2>Thali Item</h2>
+    <div class="item-grid" id="thali"></div>
+  </div>
+
+  <div class="section">
+    <h2>Curry Item</h2>
+    <div class="item-grid" id="curry"></div>
+  </div>
+  <div class="section">
+    <h2>Extra Food Item</h2>
+    <div class="item-grid" id="extrafood"></div>
+  </div>
+
+  <div class="section">
+    <h2>Mutton Item</h2>
+    <div class="item-grid" id="mutton"></div>
+  </div>
+
+  <div class="section">
+    <h2>Daywise Special Sabji And Dal Item</h2>
+    <div class="item-grid" id="daysabjidal"></div>
+  </div>
+
+  <div class="section">
+    <h2>Daywise Extra Food Item</h2>
+    <div class="item-grid" id="dayextra"></div>
+  </div>
+
+  <div class="section">
+    <h2>Daywise Pure Veg Thali Items</h2>
+    <div class="item-grid" id="purevegthali"></div>
+  </div>
+ 
+<div style="text-align: right; padding: 10px;">
+  <a href="/logout" style="
+      padding: 10px 15px;
+      background: #ff4d4d;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+  ">
+      Logout
+  </a>
+</div>
+
+  <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+use('EasyPetpuja');
+
+// Insert a few documents into the sales collection.
+db.Extra.insertMany([
+    { "day": "Monday", "items": [
+        { "name": "Haser Dim", "price": 25 },
+        { "name": "Chicken Leg", "price": 60 }
+      ]
+    },
+    { "day": "Tuesday", "items": [
+        { "name": "Haser Dim", "price": 25 },
+        { "name": "Methi Chicken", "price": 60 },
+        { "name": "Biriyani", "price": 60 }
+      ]
+    },
+    { "day": "Wednesday", "items": [
+        { "name": "Haser Dim", "price": 25 },
+        { "name": "Butter Chicken", "price": 60 }
+      ]
+    },
+    { "day": "Thursday", "items": [    
+        { "name": "Haser Dim", "price": 25 },
+        { "name": "Chicken Rezala", "price": 60 },
+        { "name": "Biriyani", "price": 60 }
+      ]
+    },
+    { "day": "Friday", "items": [
+        { "name": "Haser Dim", "price": 25 },
+        { "name": "Methi Chicken", "price": 60 }
+      ]
+    },
+    { "day": "Saturday", "items": [
+        { "name": "Haser Dim", "price": 25 },
+        { "name": "Butter Chicken", "price": 60 }
+      ]
+    }
+  ]);
+  
