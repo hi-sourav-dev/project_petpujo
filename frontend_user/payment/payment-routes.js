@@ -1,7 +1,7 @@
 // payment-routes.js - Handles all payment-related API endpoints
 const express = require('express');
 const Razorpay = require('razorpay');
-const crypto = require('crypto'); // i used for generating and verifying secure HMAC signatures.
+const crypto = require('crypto'); 
 const router = express.Router();
 const mongoose = require('mongoose');
 const razorpayConfig = require('./config');
@@ -11,7 +11,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/EasyPetpuja')
     .catch(err => console.error('Mongo error:', err));
 const paymentSchema = new mongoose.Schema({
 
-  billNumber: String,
+  billNumber: Number,
 
   orderId: String,
 
@@ -205,23 +205,20 @@ router.get('/local-payment/:paymentId', async (req, res) => {
 
 module.exports = router;
 
+
 function generateSecureCode() {
-  const letters = 'abcdefghijklmnopqrstuvwxyz';
   const digits = '0123456789';
 
-  // Generate 3 random lowercase letters
-  let lettersPart = '';
-  for (let i = 0; i < 3; i++) {
-    const index = crypto.randomInt(0, letters.length);
-    lettersPart += letters[index];
-  }
-
-  // Generate 3 random digits
-  let digitsPart = '';
-  for (let i = 0; i < 3; i++) {
+  // Generate a 4-digit secure random number
+  let code = '';
+  for (let i = 0; i < 4; i++) {
     const index = crypto.randomInt(0, digits.length);
-    digitsPart += digits[index];
+    code += digits[index];
   }
 
-  return lettersPart + digitsPart;
+  // Convert to number (so it's numeric, not string)
+  return parseInt(code, 10);
 }
+
+console.log(generateSecureCode());
+

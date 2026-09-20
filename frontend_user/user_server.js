@@ -67,12 +67,12 @@ app.get("/api/menu", async (req, res) => {
 });
 
 
-/*app.get('/menu/menu.html', (req, res) => {
+app.get('/menu/menu.html', (req, res) => {
   if (!req.session.user) { 
       return res.redirect('/login/userlogin.html'); // Redirect to login page
   }
   res.sendFile(path.join(__dirname, 'menu', 'menu.html')); // Serve the menu page if logged in
-});*/
+});
 
 
 // Serve static files for payment
